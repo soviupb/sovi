@@ -38,85 +38,46 @@ class _InicioPageState extends State<InicioPage> {
             SubtitleText("No esperes más, dale gusto a tu panzita"),
             const Spacer(flex: 10),
             //subTitleText("Ingresa tu usuario"),
+            LargeButton(() {
+              //Aqui irá nuestra función de Sign In
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    //Aca debe return menu
+                    return InicioPage(); //MenuMobile();
+                  },
+                ),
+              );
+            }, Colors.white, "Cliente", Colors.black, CustomColors.SoviMagenta,
+                Icon(Icons.person)),
+            Spacer(flex: 1),
+            LargeButton(() {
+              //Aqui irá nuestra función de Sign In
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    //Aca debe return menu
+                    return InicioPage(); //MenuMobile();
+                  },
+                ),
+              );
+            }, Colors.white, "Vendedor", Colors.black, CustomColors.SoviMagenta,
+                Icon(Icons.menu_book_rounded)),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Spacer(
-                  flex: 3,
-                ),
-                XtrasmallButton(
-                  () {
-                    //Aqui irá nuestra función de Sign In
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          //Aca debe return menu
-                          return InicioPage(); //MenuMobile();
-                        },
-                      ),
-                    );
-                  },
-                  Colors.white,
-                  "Menú", CustomColors.SoviMagenta
-                ),
-                Spacer(),
-                XtrasmallButton(
-                  () {
-                    //Aqui irá nuestra función de Sign In
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          //Aca debe return menu
-                          return const InicioPage();
-                        },
-                      ),
-                    );
-                  },
-                  Colors.white,
-                  "Ubicación", CustomColors.SoviMagenta
-                ),
-                const Spacer(),
-                XtrasmallButton(
-                  () {
-                    //Aqui irá nuestra función de Sign In
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          //Aca debe return menu
-                          return const InicioPage();
-                        },
-                      ),
-                    );
-                  },
-                  Colors.white,
-                  "Eventos",
-                  CustomColors.SoviMagenta
-                ),
-                const Spacer(
-                  flex: 3,
-                ),
-              ],
-            ),
             const Spacer(flex: 1),
-            SmallButton(
-              () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const InicioPage();
-                    },
-                  ),
-                );
-              },
-              CustomColors.SoviMagenta, 
-              "Back",
-              Colors.black, CustomColors.SoviMagenta
-            ),
+            SmallButton(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const InicioPage();
+                  },
+                ),
+              );
+            }, CustomColors.SoviMagenta, "Back", Colors.black,
+                CustomColors.SoviMagenta),
             const Spacer(flex: 1),
             SubtitleText("Sovi™, todos los derechos reservados")
           ],

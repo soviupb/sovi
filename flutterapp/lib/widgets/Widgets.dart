@@ -1,53 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/screens/Inicio.dart';
 
 import '../utils/custom_colors.dart';
 
-GestureDetector LargeButton(
-    VoidCallback function, Color bgColor, String text, Color bgColorT, Color shadowColor) {
+GestureDetector LargeButton(VoidCallback function, Color bgColor, String text,
+    Color bgColorT, Color shadowColor, Icon C) {
   return GestureDetector(
     onTap: function,
     child: Container(
       width: 180,
       height: 40,
       decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: BorderRadius.circular(5),
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 5.0,
-            offset: Offset(0,5),
-            color: shadowColor,
-          )
-        ]
-      ),
+          color: bgColor,
+          borderRadius: BorderRadius.circular(5),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 5.0,
+              offset: Offset(0, 5),
+              color: shadowColor,
+            )
+          ]),
       child: Center(
-          child: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: TextStyle(color: bgColorT),
-      )),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            const Spacer(),
+            C,
+            const Spacer(flex: 3),
+            Text(
+              text,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: bgColorT,
+                fontSize: 15,
+              ),
+            ),
+            const Spacer(),
+          ],
+        ),
+      ),
     ),
   );
 }
 
-GestureDetector SmallButton(
-    VoidCallback function, Color bgColor, String text, Color bgColorT, Color shadowColor) {
+GestureDetector SmallButton(VoidCallback function, Color bgColor, String text,
+    Color bgColorT, Color shadowColor) {
   return GestureDetector(
     onTap: function,
     child: Container(
       width: 90,
       height: 20,
       decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: BorderRadius.circular(5),
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 5.0,
-            offset: Offset(0,5),
-            color: shadowColor
-          )
-        ]
-      ),
+          color: bgColor,
+          borderRadius: BorderRadius.circular(5),
+          boxShadow: [
+            BoxShadow(blurRadius: 5.0, offset: Offset(0, 5), color: shadowColor)
+          ]),
       child: Center(
           child: Text(
         text,
@@ -65,16 +74,11 @@ GestureDetector XtrasmallButton(
       width: 90,
       height: 20,
       decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: BorderRadius.circular(5),
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 5.0,
-            offset: Offset(0,5),
-            color: shadowColor
-          )
-        ]
-      ),
+          color: bgColor,
+          borderRadius: BorderRadius.circular(5),
+          boxShadow: [
+            BoxShadow(blurRadius: 5.0, offset: Offset(0, 5), color: shadowColor)
+          ]),
       child: Center(child: Text(text)),
     ),
   );
@@ -124,5 +128,3 @@ Text RegularText(String text) {
     textAlign: TextAlign.center,
   );
 }
-
-
