@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../utils/custom_colors.dart';
+
 GestureDetector LargeButton(
-    VoidCallback function, Color bgColor, String text, Color bgColorT) {
+    VoidCallback function, Color bgColor, String text, Color bgColorT, Color shadowColor) {
   return GestureDetector(
     onTap: function,
     child: Container(
@@ -14,6 +16,7 @@ GestureDetector LargeButton(
           BoxShadow(
             blurRadius: 5.0,
             offset: Offset(0,5),
+            color: shadowColor,
           )
         ]
       ),
@@ -28,7 +31,7 @@ GestureDetector LargeButton(
 }
 
 GestureDetector SmallButton(
-    VoidCallback function, Color bgColor, String text, Color bgColorT) {
+    VoidCallback function, Color bgColor, String text, Color bgColorT, Color shadowColor) {
   return GestureDetector(
     onTap: function,
     child: Container(
@@ -41,6 +44,7 @@ GestureDetector SmallButton(
           BoxShadow(
             blurRadius: 5.0,
             offset: Offset(0,5),
+            color: shadowColor
           )
         ]
       ),
@@ -54,7 +58,7 @@ GestureDetector SmallButton(
 }
 
 GestureDetector XtrasmallButton(
-    VoidCallback function, Color bgColor, String text) {
+    VoidCallback function, Color bgColor, String text, Color shadowColor) {
   return GestureDetector(
     onTap: function,
     child: Container(
@@ -67,6 +71,7 @@ GestureDetector XtrasmallButton(
           BoxShadow(
             blurRadius: 5.0,
             offset: Offset(0,5),
+            color: shadowColor
           )
         ]
       ),
@@ -120,58 +125,4 @@ Text RegularText(String text) {
   );
 }
 
-GestureDetector LargeButtonDropShadow(
-    VoidCallback function, Color bgColor, String text, Color bgColorT) {
-  return GestureDetector(
-    onTap: function,
-    child: Container(
-      width: 180,
-      height: 40,
-      decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          width: 1,
-        ),
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 5.0
-          )
-        ]
-      ),
-      child: Center(
-          child: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: TextStyle(color: bgColorT),
-      )),
-    ),
-  );
-}
 
-GestureDetector SmallButtonDropButton(
-    VoidCallback function, Color bgColor, String text, Color bgColorT) {
-  return GestureDetector(
-    onTap: function,
-    child: Container(
-      width: 90,
-      height: 20,
-      decoration: BoxDecoration(
-        color:Colors.white,
-        borderRadius: BorderRadius.circular(5),
-       
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 5.0,
-            offset: Offset(0,5),
-          )
-        ]
-      ),
-      child: Center(
-          child: Text(
-        text,
-        style: TextStyle(color: bgColorT),
-      )),
-    ),
-  );
-}

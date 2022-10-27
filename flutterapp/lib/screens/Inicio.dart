@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterapp/utils/custom_colors.dart';
 import 'package:flutterapp/widgets/Widgets.dart';
 
 class InicioPage extends StatefulWidget {
@@ -58,7 +59,7 @@ class _InicioPageState extends State<InicioPage> {
                     );
                   },
                   Colors.white,
-                  "Menú",
+                  "Menú", CustomColors.SoviMagenta
                 ),
                 Spacer(),
                 XtrasmallButton(
@@ -75,7 +76,7 @@ class _InicioPageState extends State<InicioPage> {
                     );
                   },
                   Colors.white,
-                  "Ubicación",
+                  "Ubicación", CustomColors.SoviMagenta
                 ),
                 const Spacer(),
                 XtrasmallButton(
@@ -93,6 +94,7 @@ class _InicioPageState extends State<InicioPage> {
                   },
                   Colors.white,
                   "Eventos",
+                  CustomColors.SoviMagenta
                 ),
                 const Spacer(
                   flex: 3,
@@ -111,7 +113,7 @@ class _InicioPageState extends State<InicioPage> {
                   ),
                 );
               },
-              Colors.transparent,
+              CustomColors.SoviMagenta, 
               "Back",
               Colors.black,
             ),
