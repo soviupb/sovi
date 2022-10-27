@@ -75,11 +75,15 @@ GestureDetector XtrasmallButton(
   );
 }
 
-Container ButtonAndImage(
-    VoidCallback function, int WIdth, int Height, Color bgColor, String text) {
+Container ButtonAndImage(VoidCallback function, double Width, double Height,
+    Color bgColor, String text, String image) {
   return Container(
-    //width: WIdth,
-    //height: Height,
+    width: Width,
+    height: Height,
+    decoration: BoxDecoration(
+      color: bgColor,
+      //borderRadius: BorderRadius.circular(10),
+    ),
     child: Column(),
   );
 }
