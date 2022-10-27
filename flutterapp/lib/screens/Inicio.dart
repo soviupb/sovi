@@ -39,33 +39,69 @@ class _InicioPageState extends State<InicioPage> {
             SubtitleText("https://www.youtube.com/watch?v=AiedUZWxGtA"),
             const Spacer(flex: 4),
             //subTitleText("Ingresa tu usuario"),
-            SizedBox(
-              width: screenWIdth * 0.7,
-              child: TextField(
-                decoration: const InputDecoration(hintText: "Es usted jose?"),
-                textAlign: TextAlign.center,
-                onSubmitted: (value) {
-                  setState(() {
-                    y = true;
-                  });
-                },
-              ),
-            ),
-            y
-                ? SizedBox(
-                    width: screenWIdth * 0.7,
-                    child: TextField(
-                      decoration: const InputDecoration(hintText: "Gay"),
-                      textAlign: TextAlign.center,
-                      onSubmitted: (value) {
-                        setState(() {
-                          x = true;
-                        });
-                      },
-                    ),
-                  )
-                : Container(),
 
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Spacer(
+                  flex: 3,
+                ),
+                XtrasmallButton(
+                  () {
+                    //Aqui irá nuestra función de Sign In
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          //Aca debe return menu
+                          return InicioPage(); //MenuMobile();
+                        },
+                      ),
+                    );
+                  },
+                  Colors.white,
+                  "Menú",
+                ),
+                Spacer(),
+                XtrasmallButton(
+                  () {
+                    //Aqui irá nuestra función de Sign In
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          //Aca debe return menu
+                          return const InicioPage();
+                        },
+                      ),
+                    );
+                  },
+                  Colors.white,
+                  "Ubicación",
+                ),
+                const Spacer(),
+                XtrasmallButton(
+                  () {
+                    //Aqui irá nuestra función de Sign In
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          //Aca debe return menu
+                          return const InicioPage();
+                        },
+                      ),
+                    );
+                  },
+                  Colors.white,
+                  "Eventos",
+                ),
+                const Spacer(
+                  flex: 3,
+                ),
+              ],
+            ),
+            const Spacer(flex: 1),
             SmallButton(
               () {
                 Navigator.push(
