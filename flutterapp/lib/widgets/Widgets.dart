@@ -47,6 +47,34 @@ GestureDetector SmallButton(
   );
 }
 
+GestureDetector XtrasmallButton(
+    VoidCallback function, Color bgColor, String text) {
+  return GestureDetector(
+    onTap: function,
+    child: Container(
+      width: 90,
+      height: 20,
+      decoration: BoxDecoration(
+        color: bgColor,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          width: 1,
+        ),
+      ),
+      child: Center(child: Text(text)),
+    ),
+  );
+}
+
+Container ButtonAndImage(
+    VoidCallback function, int WIdth, int Height, Color bgColor, String text) {
+  return Container(
+    //width: WIdth,
+    //height: Height,
+    child: Column(),
+  );
+}
+
 Text TitleText(String text) {
   return Text(
     text,
