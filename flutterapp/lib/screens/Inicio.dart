@@ -4,14 +4,14 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutterapp/widgets/Widgets.dart';
 
-class SignInPage extends StatefulWidget {
-  const SignInPage({Key? key}) : super(key: key);
+class InicioPage extends StatefulWidget {
+  const InicioPage({Key? key}) : super(key: key);
 
   @override
-  State<SignInPage> createState() => _SignInPageState();
+  State<InicioPage> createState() => _InicioPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _InicioPageState extends State<InicioPage> {
   bool x = false;
   bool y = false;
   double screenheight = 0.0;
@@ -27,21 +27,22 @@ class _SignInPageState extends State<SignInPage> {
         width: screenWIdth,
         height: screenheight,
         decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 139, 137, 135),
+          color: Color.fromARGB(255, 245, 244, 242),
           //borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
           children: [
             const Spacer(flex: 2),
-            TitleText("Sign In Page"),
+            //TitleText(""),
             const Spacer(flex: 1),
-            const Image(image: AssetImage("assets/cowmap.png")),
-            const Spacer(),
+            const Image(image: AssetImage("assets/logo.png")),
+            SubtitleText("https://www.youtube.com/watch?v=AiedUZWxGtA"),
+            const Spacer(flex: 4),
             //subTitleText("Ingresa tu usuario"),
             SizedBox(
               width: screenWIdth * 0.7,
               child: TextField(
-                decoration: const InputDecoration(hintText: "Usuario"),
+                decoration: const InputDecoration(hintText: "Es usted jose?"),
                 textAlign: TextAlign.center,
                 onSubmitted: (value) {
                   setState(() {
@@ -54,7 +55,7 @@ class _SignInPageState extends State<SignInPage> {
                 ? SizedBox(
                     width: screenWIdth * 0.7,
                     child: TextField(
-                      decoration: const InputDecoration(hintText: "Clave"),
+                      decoration: const InputDecoration(hintText: "Gay"),
                       textAlign: TextAlign.center,
                       onSubmitted: (value) {
                         setState(() {
@@ -64,14 +65,14 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   )
                 : Container(),
-            
+
             SmallButton(
               () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const ();
+                      return const InicioPage();
                     },
                   ),
                 );
@@ -81,7 +82,7 @@ class _SignInPageState extends State<SignInPage> {
               Colors.black,
             ),
             const Spacer(flex: 1),
-            SubtitleText("Red Beef Colombia™, todos los derechos reservados")
+            SubtitleText("Sovi™, todos los derechos reservados")
           ],
         ),
       ),
