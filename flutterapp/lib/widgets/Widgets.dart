@@ -78,3 +78,59 @@ Text RegularText(String text) {
     textAlign: TextAlign.center,
   );
 }
+
+GestureDetector LargeButtonDropShadow(
+    VoidCallback function, Color bgColor, String text, Color bgColorT) {
+  return GestureDetector(
+    onTap: function,
+    child: Container(
+      width: 180,
+      height: 40,
+      decoration: BoxDecoration(
+        color: bgColor,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          width: 1,
+        ),
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 5.0
+          )
+        ]
+      ),
+      child: Center(
+          child: Text(
+        text,
+        textAlign: TextAlign.center,
+        style: TextStyle(color: bgColorT),
+      )),
+    ),
+  );
+}
+
+GestureDetector SmallButtonDropButton(
+    VoidCallback function, Color bgColor, String text, Color bgColorT) {
+  return GestureDetector(
+    onTap: function,
+    child: Container(
+      width: 90,
+      height: 20,
+      decoration: BoxDecoration(
+        color:Colors.white,
+        borderRadius: BorderRadius.circular(5),
+       
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 5.0,
+            offset: Offset(0,5),
+          )
+        ]
+      ),
+      child: Center(
+          child: Text(
+        text,
+        style: TextStyle(color: bgColorT),
+      )),
+    ),
+  );
+}
