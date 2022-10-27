@@ -115,7 +115,7 @@ class _InicioPageState extends State<InicioPage> {
               },
               CustomColors.SoviMagenta, 
               "Back",
-              Colors.black,
+              Colors.black, CustomColors.SoviMagenta
             ),
             const Spacer(flex: 1),
             SubtitleText("Sovi™, todos los derechos reservados")
