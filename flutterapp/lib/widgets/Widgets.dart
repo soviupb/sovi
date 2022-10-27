@@ -9,10 +9,13 @@ GestureDetector LargeButton(
       height: 40,
       decoration: BoxDecoration(
         color: bgColor,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          width: 1,
-        ),
+        borderRadius: BorderRadius.circular(5),
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 5.0,
+            offset: Offset(0,5),
+          )
+        ]
       ),
       child: Center(
           child: Text(
@@ -33,10 +36,13 @@ GestureDetector SmallButton(
       height: 20,
       decoration: BoxDecoration(
         color: bgColor,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          width: 1,
-        ),
+        borderRadius: BorderRadius.circular(5),
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 5.0,
+            offset: Offset(0,5),
+          )
+        ]
       ),
       child: Center(
           child: Text(
@@ -56,10 +62,13 @@ GestureDetector XtrasmallButton(
       height: 20,
       decoration: BoxDecoration(
         color: bgColor,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          width: 1,
-        ),
+        borderRadius: BorderRadius.circular(5),
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 5.0,
+            offset: Offset(0,5),
+          )
+        ]
       ),
       child: Center(child: Text(text)),
     ),

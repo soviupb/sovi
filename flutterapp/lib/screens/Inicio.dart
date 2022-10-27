@@ -33,11 +33,9 @@ class _InicioPageState extends State<InicioPage> {
         child: Column(
           children: [
             const Spacer(flex: 2),
-            //TitleText(""),
-            const Spacer(flex: 1),
             const Image(image: AssetImage("assets/logo.png")),
-            SubtitleText("https://www.youtube.com/watch?v=AiedUZWxGtA"),
-            const Spacer(flex: 4),
+            SubtitleText("No esperes más, dale gusto a tu panzita"),
+            const Spacer(flex: 10),
             //subTitleText("Ingresa tu usuario"),
 
             Row(
