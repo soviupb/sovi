@@ -1,10 +1,20 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutterapp/screens/Inicio.dart';
 
 import '../utils/custom_colors.dart';
 
-GestureDetector LargeButton(VoidCallback function, Color bgColor, String text,
-    Color bgColorT, Color shadowColor, Icon C, double Height, double Width) {
+GestureDetector UniversalButton(
+    VoidCallback function,
+    Color bgColor,
+    String text,
+    Color bgColorT,
+    double FontSize,
+    Color shadowColor,
+    Icon C,
+    double Height,
+    double Width) {
   return GestureDetector(
     onTap: function,
     child: Container(
@@ -12,7 +22,7 @@ GestureDetector LargeButton(VoidCallback function, Color bgColor, String text,
       height: Height,
       decoration: BoxDecoration(
           color: bgColor,
-          borderRadius: BorderRadius.circular(0),
+          borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
               blurRadius: 5.0,
@@ -27,16 +37,16 @@ GestureDetector LargeButton(VoidCallback function, Color bgColor, String text,
           children: <Widget>[
             const Spacer(),
             C, //C es el icono que se pase como parametro
-            const Spacer(flex: 3),
+            const Spacer(flex: 2),
             Text(
               text,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: bgColorT,
-                fontSize: 15,
+                fontSize: FontSize,
               ),
             ),
-            const Spacer(),
+            const Spacer(flex: 2),
           ],
         ),
       ),

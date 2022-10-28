@@ -38,7 +38,7 @@ class _InicioPageState extends State<InicioPage> {
             SubtitleText("No esperes más, dale gusto a tu panzita"),
             const Spacer(flex: 10),
             //subTitleText("Ingresa tu usuario"),
-            LargeButton(() {
+            UniversalButton(() {
               //Aqui irá nuestra función de Sign In
               Navigator.push(
                 context,
@@ -49,10 +49,17 @@ class _InicioPageState extends State<InicioPage> {
                   },
                 ),
               );
-            }, Colors.white, "Cliente", Colors.black, CustomColors.SoviMagenta,
-                Icon(Icons.person), screenheight * 0.1, screenWIdth * 0.8),
+            },
+                Colors.white,
+                "Cliente",
+                Colors.black,
+                20,
+                CustomColors.SoviMagenta,
+                Icon(Icons.person, size: screenheight * 0.07),
+                screenheight * 0.08,
+                screenWIdth * 0.8),
             Spacer(flex: 1),
-            LargeButton(() {
+            UniversalButton(() {
               //Aqui irá nuestra función de Sign In
               Navigator.push(
                 context,
@@ -67,8 +74,9 @@ class _InicioPageState extends State<InicioPage> {
                 Colors.white,
                 "Vendedor",
                 Colors.black,
+                20,
                 CustomColors.SoviMagenta,
-                Icon(Icons.menu_book_rounded),
+                Icon(Icons.menu_book_rounded, size: screenheight * 0.07),
                 screenheight * 0.08,
                 screenWIdth * 0.8),
 
