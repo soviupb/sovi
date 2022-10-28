@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutterapp/utils/custom_colors.dart';
+import 'package:flutterapp/widgets/SeachBarWidget.dart';
 import 'package:flutterapp/widgets/Widgets.dart';
 
 import '../widgets/UniversalButton.dart';
@@ -30,12 +31,14 @@ class _InicioPageState extends State<InicioPage> {
         width: screenWIdth,
         height: screenheight,
         decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 245, 244, 242),
+          //color: Colors.amber,
+          color: Colors.white,
           //borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
           children: [
             const Spacer(flex: 6),
+            //SearchBarWidget(),
             const Image(image: AssetImage("assets/logo.png")),
             SubtitleText("No esperes más, dale gusto a tu panzita"),
             const Spacer(flex: 10),
