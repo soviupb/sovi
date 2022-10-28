@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "787281139628",
+    "project_id": "soviapp-bc7e2",
+    "storage_bucket": "soviapp-bc7e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787281139628:android:fd3d82a4117b8dbe2f4c09",
+        "android_client_info": {
+          "package_name": "com.example.flutterapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787281139628-f919gbqgj064fja09ep3q5si50erk8qr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutterapp",
+            "certificate_hash": "709b7d7a5fb1d64d788de8ea9bb0c6d69f28dd7f"
+          }
+        },
+        {
+          "client_id": "787281139628-mi2h9ndhv6ns0iggkqkii3krdmcsph5a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy2f0JSvqQBvT2Hp9--IBpghiVWfnbxbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "787281139628-mi2h9ndhv6ns0iggkqkii3krdmcsph5a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
