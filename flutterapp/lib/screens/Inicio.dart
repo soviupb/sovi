@@ -33,7 +33,7 @@ class _InicioPageState extends State<InicioPage> {
         ),
         child: Column(
           children: [
-            const Spacer(flex: 2),
+            const Spacer(flex: 6),
             const Image(image: AssetImage("assets/logo.png")),
             SubtitleText("No esperes más, dale gusto a tu panzita"),
             const Spacer(flex: 10),
@@ -50,7 +50,7 @@ class _InicioPageState extends State<InicioPage> {
                 ),
               );
             }, Colors.white, "Cliente", Colors.black, CustomColors.SoviMagenta,
-                Icon(Icons.person)),
+                Icon(Icons.person), screenheight * 0.1, screenWIdth * 0.8),
             Spacer(flex: 1),
             LargeButton(() {
               //Aqui irá nuestra función de Sign In
@@ -63,8 +63,14 @@ class _InicioPageState extends State<InicioPage> {
                   },
                 ),
               );
-            }, Colors.white, "Vendedor", Colors.black, CustomColors.SoviMagenta,
-                Icon(Icons.menu_book_rounded)),
+            },
+                Colors.white,
+                "Vendedor",
+                Colors.black,
+                CustomColors.SoviMagenta,
+                Icon(Icons.menu_book_rounded),
+                screenheight * 0.08,
+                screenWIdth * 0.8),
 
             const Spacer(flex: 1),
             SmallButton(() {
@@ -78,7 +84,7 @@ class _InicioPageState extends State<InicioPage> {
               );
             }, CustomColors.SoviMagenta, "Back", Colors.black,
                 CustomColors.SoviMagenta),
-            const Spacer(flex: 1),
+            const Spacer(flex: 5),
             SubtitleText("Sovi™, todos los derechos reservados")
           ],
         ),
