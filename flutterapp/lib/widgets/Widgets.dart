@@ -138,3 +138,5 @@ Text RegularText(String text) {
     textAlign: TextAlign.center,
   );
 }
+
+
