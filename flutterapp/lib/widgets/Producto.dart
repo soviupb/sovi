@@ -4,8 +4,8 @@ import '../utils/custom_colors.dart';
 
 Container producto(
   String nom_producto,
-  String imagen,
-  String precio,
+  //String imagen,
+  double precio,
   double estrellas,
 ) {
   //vendedor jmario
@@ -22,11 +22,11 @@ Container producto(
         ]),
     child: Column(
       children: [
-        Image(
-          image: AssetImage(imagen),
-          height: 200,
-          width: 300,
-        ),
+        //Image(
+        //image: AssetImage(imagen),
+        // height: 200,
+        //width: 300,
+        // ),
         //Image(image: AssetImage(imagen)),
         Text(
           nom_producto,
@@ -37,7 +37,7 @@ Container producto(
         ),
         SizedBox(height: 5),
         Text(
-          ("Precio: " + precio),
+          ("Precio: " + precio.toString()),
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 14,
