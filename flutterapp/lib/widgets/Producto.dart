@@ -1,63 +1,95 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/screens/Inicio.dart';
+import 'package:flutterapp/widgets/UniversalButton.dart';
 import '../utils/custom_colors.dart';
 
 Container producto(
-  String nom_producto,
-  //String imagen,
-  double precio,
-  double estrellas,
-) {
+    String nom_producto,
+    //String imagen,
+    double precio,
+    double estrellas,
+    VoidCallback function) {
   //vendedor jmario
   return Container(
+    margin: EdgeInsets.symmetric(horizontal: 20),
     decoration: BoxDecoration(
-        color: CustomColors.SoviGris,
-        borderRadius: BorderRadius.circular(0),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
         boxShadow: [
-          BoxShadow(
-            blurRadius: 5.0,
-            offset: Offset(0, 5),
-            color: Colors.transparent,
-          )
+          BoxShadow(blurRadius: 5.0, offset: Offset(1, 4), color: Colors.grey)
         ]),
     child: Column(
       children: [
-        //Image(
-        //image: AssetImage(imagen),
-        // height: 200,
-        //width: 300,
-        // ),
-        //Image(image: AssetImage(imagen)),
-        Text(
-          nom_producto,
-          style: const TextStyle(
-            fontWeight: FontWeight.w900,
-            fontSize: 17,
-          ),
-        ),
+        Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Spacer(),
+              Column(children: [
+                const Image(
+                  image: AssetImage("assets/papas.jpg"),
+                  width: 90,
+                  height: 90,
+                ),
+              ]),
+              Spacer(),
+              Column(
+                children: [
+                  Text(
+                    nom_producto,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w900,
+                      fontSize: 17,
+                    ),
+                  ),
+                  Text(
+                    ("Precio: " + precio.toString()),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
+              Spacer()
+            ]),
         SizedBox(height: 5),
-        Text(
-          ("Precio: " + precio.toString()),
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 14,
-          ),
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            const Spacer(flex: 2),
+            Icon(
+              Icons.star,
+              color: CustomColors.SoviAmarillo,
+            ),
+            Text(
+              estrellas.toString(),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                //color: bgColorT,
+                //fontSize: FontSize,
+              ),
+            ),
+            const Spacer(flex: 2),
+          ],
         ),
-        SizedBox(height: 5),
-        Text(
-          ("Calificación " + estrellas.toString()),
-          style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w300,
-            fontFamily: 'Alumni Sans Pinstripe',
-          ),
-        ),
-        SizedBox(
-            height:
-                20), // VoidCallback function, Color bgColor, String text, Color shadowColor
-        //LargeButton(VoidCallback function, Color bgColor, String text, Color bgColorT, Color shadowColor, Icon C, double Height, double Width)
+        //SizedBox(
+        //    height:
+        //        20),
 
-        SizedBox(height: 8),
+        SizedBox(height: 10),
+        UniversalButton(
+            function,
+            CustomColors.SoviMagenta,
+            "Ver producto",
+            Colors.white,
+            15,
+            Colors.transparent,
+            Icon(Icons.shopping_cart),
+            25,
+            130),
+        SizedBox(height: 10),
         /*Text(
           ("________________________________________"),
           style: TextStyle(
@@ -65,12 +97,6 @@ Container producto(
             fontSize: 14,
           ),
         ),*/
-        Row(children: <Widget>[
-          Expanded(child: Divider()),
-          Text(" PPP "),
-          Expanded(child: Divider()),
-        ]),
-        SizedBox(height: 25),
       ],
     ),
   );
