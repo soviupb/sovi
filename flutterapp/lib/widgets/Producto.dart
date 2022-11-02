@@ -8,7 +8,9 @@ Container producto(
     //String imagen,
     double precio,
     double estrellas,
-    VoidCallback function) {
+    VoidCallback function,
+    double HEight,
+    double WIdth) {
   //vendedor jmario
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 20),
@@ -26,10 +28,10 @@ Container producto(
             children: <Widget>[
               Spacer(),
               Column(children: [
-                const Image(
+                Image(
                   image: AssetImage("assets/papas.jpg"),
-                  width: 90,
-                  height: 90,
+                  width: WIdth * 0.4,
+                  height: HEight * 0.2,
                 ),
               ]),
               Spacer(),
