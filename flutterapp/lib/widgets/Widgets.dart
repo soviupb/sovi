@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutterapp/screens/Inicio.dart';
 
@@ -89,5 +87,3 @@ Text RegularText(String text) {
     textAlign: TextAlign.center,
   );
 }
-
-
