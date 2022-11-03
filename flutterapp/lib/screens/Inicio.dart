@@ -9,6 +9,7 @@ import 'package:flutterapp/widgets/Widgets.dart';
 
 import '../widgets/UniversalButton.dart';
 import 'login.dart';
+import 'productos.dart';
 
 class InicioPage extends StatefulWidget {
   const InicioPage({Key? key}) : super(key: key);
@@ -45,7 +46,7 @@ class _InicioPageState extends State<InicioPage> {
             SubtitleText("No esperes más, dale gusto a tu panzita"),
             const Spacer(flex: 10),
             //subTitleText("Ingresa tu usuario"),
-            producto("Papas", 10000, 3.5, () {
+            producto("Papas", "assets/papas.jpg", 10000, 3.5, () {
               //Aqui irá nuestra función de Sign In
               Navigator.push(
                 context,
@@ -65,7 +66,7 @@ class _InicioPageState extends State<InicioPage> {
                 MaterialPageRoute(
                   builder: (context) {
                     //Aca debe return menu
-                    return InicioPage(); //MenuMobile();
+                    return ProdPage(); //MenuMobile();
                   },
                 ),
               );

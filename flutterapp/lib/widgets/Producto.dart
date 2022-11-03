@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/screens/Inicio.dart';
+import 'package:flutterapp/widgets/Estrellas.dart';
 import 'package:flutterapp/widgets/UniversalButton.dart';
 import '../utils/custom_colors.dart';
 
-Container producto(
-    String nom_producto,
-    //String imagen,
-    double precio,
-    double estrellas,
-    VoidCallback function,
-    double HEight,
-    double WIdth) {
+Container producto(String nom_producto, String imagen, double precio,
+    double estrellas, VoidCallback function, double Height, double Width) {
   //vendedor jmario
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 20),
@@ -23,40 +18,51 @@ Container producto(
     child: Column(
       children: [
         Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Spacer(),
-              Column(children: [
-                Image(
-                  image: AssetImage("assets/papas.jpg"),
-                  width: WIdth * 0.4,
-                  height: HEight * 0.2,
-                ),
-              ]),
-              Spacer(),
-              Column(
-                children: [
-                  Text(
-                    nom_producto,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w900,
-                      fontSize: 17,
-                    ),
-                  ),
-                  Text(
-                    ("Precio: " + precio.toString()),
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                    ),
-                  ),
-                ],
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Spacer(),
+            Column(children: [
+              Image(
+                image: AssetImage(imagen),
+                width: Width * 0.4,
+                height: Height * 0.2,
               ),
-              Spacer()
             ]),
-        SizedBox(height: 5),
-        Row(
+            Spacer(),
+            Column(
+              children: [
+                Text(
+                  nom_producto,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 30,
+                  ),
+                ),
+                Text(
+                  ("Precio: " + precio.toString()),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      color: CustomColors.SoviAmarillo,
+                    ),
+                    Text(
+                      estrellas.toString(),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ],
+                ),
+                //Estrellas(),
+                /*Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -69,37 +75,39 @@ Container producto(
               estrellas.toString(),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                //color: bgColorT,
-                //fontSize: FontSize,
+                fontSize: 25,
               ),
             ),
             const Spacer(flex: 2),
           ],
-        ),
-        //SizedBox(
-        //    height:
-        //        20),
-
-        SizedBox(height: 10),
-        UniversalButton(
-            function,
-            CustomColors.SoviMagenta,
-            "Ver producto",
-            Colors.white,
-            15,
-            Colors.transparent,
-            Icon(Icons.shopping_cart),
-            25,
-            130),
-        SizedBox(height: 10),
-        /*Text(
-          ("________________________________________"),
-          style: TextStyle(
-            fontWeight: FontWeight.w200,
-            fontSize: 14,
-          ),
         ),*/
+                //SizedBox(
+                //    height:
+                //        20),
+
+                SizedBox(height: 10),
+                UniversalButton(
+                    function,
+                    CustomColors.SoviMagenta,
+                    "Ver producto",
+                    Colors.white,
+                    20,
+                    Colors.transparent,
+                    Icon(Icons.shopping_cart),
+                    35,
+                    145),
+                SizedBox(height: 10),
+              ],
+            ),
+          ],
+        ),
       ],
     ),
   );
+  Container(
+      child: Column(
+    children: [
+      SizedBox(height: 20),
+    ],
+  ));
 }
