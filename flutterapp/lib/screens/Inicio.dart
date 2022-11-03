@@ -8,6 +8,7 @@ import 'package:flutterapp/widgets/SeachBarWidget.dart';
 import 'package:flutterapp/widgets/Widgets.dart';
 
 import '../widgets/UniversalButton.dart';
+import 'login.dart';
 
 class InicioPage extends StatefulWidget {
   const InicioPage({Key? key}) : super(key: key);
@@ -85,7 +86,7 @@ class _InicioPageState extends State<InicioPage> {
                 MaterialPageRoute(
                   builder: (context) {
                     //Aca debe return menu
-                    return InicioPage(); //MenuMobile();
+                    return LoginPage(); //MenuMobile();
                   },
                 ),
               );

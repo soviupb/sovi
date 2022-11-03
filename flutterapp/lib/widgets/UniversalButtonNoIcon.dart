@@ -3,7 +3,7 @@ import 'package:flutterapp/screens/Inicio.dart';
 
 import '../utils/custom_colors.dart';
 
-GestureDetector UniversalButton(
+GestureDetector UniversalButtonNoIcon(
     VoidCallback function,
     Color bgColor,
     String text,
@@ -30,6 +30,7 @@ GestureDetector UniversalButton(
       child: Center(
           child: Column(
         children: [
+          Spacer(flex: 1),
           Text(
             text,
             style: TextStyle(
@@ -38,6 +39,7 @@ GestureDetector UniversalButton(
               fontSize: FontSize,
             ),
           ),
+          Spacer(flex: 1),
         ],
       )),
     ),
