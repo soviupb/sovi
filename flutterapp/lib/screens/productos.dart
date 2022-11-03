@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterapp/screens/ProtoBottomBar.dart';
+import 'package:flutterapp/screens/ProtoNavegationBar.dart';
+import 'package:flutterapp/screens/seller.dart';
 import 'package:flutterapp/utils/custom_colors.dart';
 import 'package:flutterapp/widgets/Producto.dart';
 import 'package:flutterapp/widgets/SeachBarWidget.dart';
@@ -49,7 +52,7 @@ class ProdPage extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) {
                     //Aca debe return menu
-                    return InicioPage(); //MenuMobile();
+                    return ProtoNavPage(); //MenuMobile();
                   },
                 ),
               );
