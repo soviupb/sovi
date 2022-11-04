@@ -1,118 +1,190 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutterapp/screens/ProtoBottomBar.dart';
-import 'package:flutterapp/screens/ProtoNavegationBar.dart';
-import 'package:flutterapp/screens/seller.dart';
+import 'package:flutterapp/screens/Inicio.dart';
+import 'package:flutterapp/screens/productos.dart';
 import 'package:flutterapp/utils/custom_colors.dart';
 import 'package:flutterapp/widgets/Producto.dart';
-import 'package:flutterapp/widgets/SeachBarWidget.dart';
-import 'package:flutterapp/widgets/UniversalButtonNoIcon.dart';
-import 'package:flutterapp/widgets/Widgets.dart';
+//Documentation: https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html
 
-import '../widgets/UniversalButton.dart';
-import 'Inicio.dart';
+class ProdPage extends StatefulWidget {
+  const ProdPage({super.key});
 
-class ProdPage extends StatelessWidget {
-  const ProdPage({Key? key}) : super(key: key);
+  @override
+  State<ProdPage> createState() => _ProdPageState();
+}
+
+class _ProdPageState extends State<ProdPage> {
+  int _selectedIndex = 0;
+  double screenheight = 0.0;
+  double screenWIdth = 0.0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Home',
+      //style: optionStyle,
+    ),
+    Text(
+      'Index 1: Busqueda',
+      //style: optionStyle,
+    ),
+    Text(
+      'Index 2: Vista Hamburguer',
+      //style: optionStyle,
+    ),
+  ];
+
+//Creo que este metodo ya es innecesario
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    double screenheight = 0.0;
-    double screenWIdth = 0.0;
     screenheight = MediaQuery.of(context).size.height;
     screenWIdth = MediaQuery.of(context).size.width;
     return Scaffold(
         body: Center(
             child: Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-      decoration: BoxDecoration(
-        color: Color.fromARGB(15, 255, 255, 255),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: 35),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.8,
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: "Buscar",
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            color: Color.fromARGB(15, 255, 255, 255),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: 35),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Buscar",
+                    ),
+                  ),
                 ),
-              ),
+                SizedBox(height: 20),
+                producto("Barquillos", "assets/papas.jpg", 10000, 3.5, () {
+                  //Aqui irá nuestra función de Sign In
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        //Aca debe return menu
+                        return ProdPage(); //MenuMobile();
+                      },
+                    ),
+                  );
+                }, screenheight, screenWIdth),
+                SizedBox(height: 20),
+                producto("Papas", "assets/papas.jpg", 10000, 3.5, () {
+                  //Aqui irá nuestra función de Sign In
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        //Aca debe return menu
+                        return InicioPage(); //MenuMobile();
+                      },
+                    ),
+                  );
+                }, screenheight, screenWIdth),
+                SizedBox(height: 20),
+                producto("Papitas", "assets/papas.jpg", 10000, 3.5, () {
+                  //Aqui irá nuestra función de Sign In
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        //Aca debe return menu
+                        return InicioPage(); //MenuMobile();
+                      },
+                    ),
+                  );
+                }, screenheight, screenWIdth),
+                SizedBox(height: 20),
+                producto("Dulces", "assets/papas.jpg", 10000, 3.5, () {
+                  //Aqui irá nuestra función de Sign In
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        //Aca debe return menu
+                        return InicioPage(); //MenuMobile();
+                      },
+                    ),
+                  );
+                }, screenheight, screenWIdth),
+                SizedBox(height: 20),
+                producto("Café", "assets/papas.jpg", 10000, 3.5, () {
+                  //Aqui irá nuestra función de Sign In
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        //Aca debe return menu
+                        return InicioPage(); //MenuMobile();
+                      },
+                    ),
+                  );
+                }, screenheight, screenWIdth),
+                SizedBox(height: 20),
+              ],
             ),
-            SizedBox(height: 20),
-            producto("Barquillos", "assets/papas.jpg", 10000, 3.5, () {
-              //Aqui irá nuestra función de Sign In
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    //Aca debe return menu
-                    return ProtoNavPage(); //MenuMobile();
-                  },
-                ),
+          ),
+        )),
+        bottomNavigationBar: Theme(
+          data: Theme.of(context).copyWith(
+            // sets the background color of the `BottomNavigationBar`
+            canvasColor: CustomColors.SoviMagenta,
+          ),
+          child: BottomNavigationBar(
+            // fixedColor: CustomColors.SoviMagenta,
+            items: <BottomNavigationBarItem>[
+              //quite el const de aca para poder usar
+              //  screenheightt, pues este no es constante
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home, size: screenheight * 0.07),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search, size: screenheight * 0.07),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.menu, size: screenheight * 0.07),
+                label: '',
+              ),
+            ],
+            currentIndex: _selectedIndex,
+            selectedItemColor: Colors.white,
+            onTap: (int index) {
+              switch (index) {
+                case 0:
+                  // only scroll to top when current index is selected.
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        //Aca debe return menu
+                        return ProdPage(); //MenuMobile();
+                      },
+                    ),
+                  );
+                  break;
+                case 1:
+                  //showModal(context);
+                  break;
+              }
+              setState(
+                () {
+                  _selectedIndex = index;
+                },
               );
-            }, screenheight, screenWIdth),
-            SizedBox(height: 20),
-            producto("Papas", "assets/papas.jpg", 10000, 3.5, () {
-              //Aqui irá nuestra función de Sign In
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    //Aca debe return menu
-                    return InicioPage(); //MenuMobile();
-                  },
-                ),
-              );
-            }, screenheight, screenWIdth),
-            SizedBox(height: 20),
-            producto("Papitas", "assets/papas.jpg", 10000, 3.5, () {
-              //Aqui irá nuestra función de Sign In
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    //Aca debe return menu
-                    return InicioPage(); //MenuMobile();
-                  },
-                ),
-              );
-            }, screenheight, screenWIdth),
-            SizedBox(height: 20),
-            producto("Dulces", "assets/papas.jpg", 10000, 3.5, () {
-              //Aqui irá nuestra función de Sign In
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    //Aca debe return menu
-                    return InicioPage(); //MenuMobile();
-                  },
-                ),
-              );
-            }, screenheight, screenWIdth),
-            SizedBox(height: 20),
-            producto("Café", "assets/papas.jpg", 10000, 3.5, () {
-              //Aqui irá nuestra función de Sign In
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    //Aca debe return menu
-                    return InicioPage(); //MenuMobile();
-                  },
-                ),
-              );
-            }, screenheight, screenWIdth),
-            SizedBox(height: 20),
-          ],
-        ),
-      ),
-    )));
+            },
+          ),
+        ));
   }
 }
