@@ -22,7 +22,7 @@ Container producto(String nom_producto, String imagen, double precio,
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Spacer(),
+            const Spacer(),
             Column(children: [
               Image(
                 image: AssetImage(imagen),
