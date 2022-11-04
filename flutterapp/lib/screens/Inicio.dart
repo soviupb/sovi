@@ -43,21 +43,10 @@ class _InicioPageState extends State<InicioPage> {
             const Spacer(flex: 6),
             //SearchBarWidget(),
             const Image(image: AssetImage("assets/logo.png")),
+            SizedBox(height: 20,),
             SubtitleText("No esperes más, dale gusto a tu panzita"),
             const Spacer(flex: 10),
             //subTitleText("Ingresa tu usuario"),
-            producto("Papas", "assets/papas.jpg", 10000, 3.5, () {
-              //Aqui irá nuestra función de Sign In
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    //Aca debe return menu
-                    return InicioPage(); //MenuMobile();
-                  },
-                ),
-              );
-            }, screenheight, screenWIdth),
             SizedBox(height: 10),
             UniversalButton(() {
               //Aqui irá nuestra función de Sign In
@@ -79,7 +68,7 @@ class _InicioPageState extends State<InicioPage> {
                 Icon(Icons.person, size: screenheight * 0.07),
                 screenheight * 0.08,
                 screenWIdth * 0.8),
-            Spacer(flex: 1),
+            Spacer(flex: 2),
             UniversalButton(() {
               //Aqui irá nuestra función de Sign In
               Navigator.push(
@@ -97,24 +86,14 @@ class _InicioPageState extends State<InicioPage> {
                 Colors.black,
                 20,
                 CustomColors.SoviMagenta,
-                Icon(Icons.menu_book_rounded, size: screenheight * 0.07),
+                Icon(Icons.storefront, size: screenheight * 0.07),
                 screenheight * 0.08,
                 screenWIdth * 0.8),
-
-            const Spacer(flex: 1),
-            SmallButton(() {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const InicioPage();
-                  },
-                ),
-              );
-            }, CustomColors.SoviMagenta, "Back", Colors.black,
-                CustomColors.SoviMagenta),
             const Spacer(flex: 5),
-            SubtitleText("Sovi™, todos los derechos reservados")
+            SubtitleText("Sovi™, todos los derechos reservados"),
+            SizedBox(
+              height: 10,
+            )
           ],
         ),
       ),

@@ -24,36 +24,29 @@ class LoginPage extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           color: Color.fromARGB(15, 255, 255, 255),
-          borderRadius: BorderRadius.circular(10),
+          //borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
           children: [
-            UniversalButton(() {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const InicioPage();
-                  },
-                ),
-              );
-            }, Colors.white, "", Colors.white, 10, Colors.white,
-                Icon(Icons.arrow_back), 50, 50),
-            Spacer(
-              flex: 3,
+            Row(
+              children: [
+                SizedBox(width: 10,),
+                UniversalButton(() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const InicioPage();
+                      },
+                    ),
+                  );
+                }, Colors.white, "", Colors.white, 50, Colors.white,
+                    Icon(Icons.arrow_back, size: 40,), 50, 50),
+              ],
             ),
-            /*SmallButton(() {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const InicioPage();
-                  },
-                ),
-              );
-            }, CustomColors.SoviMagenta, "<-", Colors.black,
-                CustomColors.SoviMagenta),*/
-
+            Spacer(
+              flex: 2,
+            ),
             Text(
               "Iniciar Sesión",
               style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),

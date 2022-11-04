@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterapp/screens/login.dart';
 import 'package:flutterapp/utils/custom_colors.dart';
 import 'package:flutterapp/widgets/Producto.dart';
 import 'package:flutterapp/widgets/SeachBarWidget.dart';
@@ -26,6 +27,22 @@ class SellerPage extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(children: [
+        Row(
+              children: [
+                SizedBox(width: 10,),
+                UniversalButton(() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const LoginPage();
+                      },
+                    ),
+                  );
+                }, Colors.white, "", Colors.white, 50, Colors.white,
+                    Icon(Icons.arrow_back, size: 40,), 50, 50),
+              ],
+            ),
         Spacer(
           flex: 1,
         ),
@@ -75,22 +92,26 @@ class SellerPage extends StatelessWidget {
             )
           ],
         ),
+        SizedBox(height: 30,),
         SingleChildScrollView(
-          child: Column(children: [
-            producto("Papas", "assets/papas.jpg", 10000, 3.5, () {
-              //Aqui irá nuestra función de Sign In
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    //Aca debe return menu
-                    return InicioPage(); //MenuMobile();
-                  },
-                ),
-              );
-            }, MediaQuery.of(context).size.height,
-                MediaQuery.of(context).size.width),
-          ]),
+          child: Container(
+            height: 600,
+            child: Column(children: [
+              producto("Papas", "assets/papas.jpg", 10000, 3.5, () {
+                //Aqui irá nuestra función de Sign In
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      //Aca debe return menu
+                      return InicioPage(); //MenuMobile();
+                    },
+                  ),
+                );
+              }, MediaQuery.of(context).size.height,
+                  MediaQuery.of(context).size.width),
+            ]),
+          ),
         )
       ]),
     )));

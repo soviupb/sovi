@@ -66,7 +66,7 @@ class _ProdPageState extends State<ProdPage> {
                   ),
                 ),
                 SizedBox(height: 20),
-                producto("Barquillos", "assets/papas.jpg", 10000, 3.5, () {
+                producto("Barquillos", "assets/barquillos.jpg", 10000, 3.5, () {
                   //Aqui irá nuestra función de Sign In
                   Navigator.push(
                     context,
@@ -105,7 +105,7 @@ class _ProdPageState extends State<ProdPage> {
                   );
                 }, screenheight, screenWIdth),
                 SizedBox(height: 20),
-                producto("Dulces", "assets/papas.jpg", 10000, 3.5, () {
+                producto("Dulces", "assets/dulces.jpg", 10000, 3.5, () {
                   //Aqui irá nuestra función de Sign In
                   Navigator.push(
                     context,
@@ -118,7 +118,7 @@ class _ProdPageState extends State<ProdPage> {
                   );
                 }, screenheight, screenWIdth),
                 SizedBox(height: 20),
-                producto("Café", "assets/papas.jpg", 10000, 3.5, () {
+                producto("Café", "assets/cafe.jpg", 10000, 3.5, () {
                   //Aqui irá nuestra función de Sign In
                   Navigator.push(
                     context,
