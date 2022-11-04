@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/screens/BuquedaSeller.dart';
 import 'package:flutterapp/screens/Inicio.dart';
 import 'package:flutterapp/screens/productos.dart';
 import 'package:flutterapp/utils/custom_colors.dart';
@@ -164,17 +165,32 @@ class _ProdPageState extends State<ProdPage> {
               switch (index) {
                 case 0:
                   // only scroll to top when current index is selected.
+                  //Nada pues estamos en el case 0
+                  break;
+                case 1:
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
                         //Aca debe return menu
-                        return ProdPage(); //MenuMobile();
+                        return BusquedaSellerPage(); //MenuMobile();
                       },
                     ),
                   );
+                  //BusquedaSellerPage
+                  //showModal(context);
                   break;
-                case 1:
+                case 2:
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        //Aca debe return menu
+                        return BusquedaSellerPage(); //MenuMobile();
+                      },
+                    ),
+                  );
+                  //BusquedaSellerPage
                   //showModal(context);
                   break;
               }

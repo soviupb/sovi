@@ -1,35 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/screens/productos.dart';
 import 'package:flutterapp/utils/custom_colors.dart';
 //Documentation: https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html
 
-class ProtoNavPage extends StatefulWidget {
-  const ProtoNavPage({super.key});
+class BusquedaSellerPage extends StatefulWidget {
+  const BusquedaSellerPage({super.key});
 
   @override
-  State<ProtoNavPage> createState() => _ProtoNavPageState();
+  State<BusquedaSellerPage> createState() => _BusquedaSellerPageState();
 }
 
-class _ProtoNavPageState extends State<ProtoNavPage> {
+class _BusquedaSellerPageState extends State<BusquedaSellerPage> {
   int _selectedIndex = 0;
   double screenheight = 0.0;
   double screenWIdth = 0.0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      //style: optionStyle,
-    ),
-    Text(
-      'Index 1: Busqueda',
-      //style: optionStyle,
-    ),
-    Text(
-      'Index 2: Vista Hamburguer',
-      //style: optionStyle,
-    ),
-  ];
-
+//Creo que este metodo ya es innecesario
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -42,8 +27,9 @@ class _ProtoNavPageState extends State<ProtoNavPage> {
     screenWIdth = MediaQuery.of(context).size.width;
     return Scaffold(
         body: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
-        ),
+            child: Column(
+          children: [Text('R')],
+        )),
         bottomNavigationBar: Theme(
           data: Theme.of(context).copyWith(
             // sets the background color of the `BottomNavigationBar`
@@ -67,9 +53,46 @@ class _ProtoNavPageState extends State<ProtoNavPage> {
                 label: '',
               ),
             ],
-            currentIndex: _selectedIndex,
+            currentIndex: 1,
             selectedItemColor: Colors.white,
-            onTap: _onItemTapped,
+            onTap: (int index) {
+              switch (index) {
+                case 0:
+                  // only scroll to top when current index is selected.
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        //Aca debe return menu
+                        return ProdPage(); //MenuMobile();
+                      },
+                    ),
+                  );
+                  break;
+                case 1:
+                  //showModal(context);
+                  //Nada pues estamos en case 1
+                  break;
+                case 2:
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        //Aca debe return menu
+                        return BusquedaSellerPage(); //Aqui iria la vista de valeria();
+                      },
+                    ),
+                  );
+                  //BusquedaSellerPage
+                  //showModal(context);
+                  break;
+              }
+              setState(
+                () {
+                  _selectedIndex = index;
+                },
+              );
+            },
           ),
         ));
   }
