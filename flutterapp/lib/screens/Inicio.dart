@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterapp/screens/login2FIre.dart';
 import 'package:flutterapp/utils/custom_colors.dart';
 import 'package:flutterapp/widgets/Producto.dart';
 import 'package:flutterapp/widgets/SeachBarWidget.dart';
@@ -43,7 +44,9 @@ class _InicioPageState extends State<InicioPage> {
             const Spacer(flex: 6),
             //SearchBarWidget(),
             const Image(image: AssetImage("assets/logo.png")),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             SubtitleText("No esperes más, dale gusto a tu panzita"),
             const Spacer(flex: 10),
             //subTitleText("Ingresa tu usuario"),
@@ -55,7 +58,7 @@ class _InicioPageState extends State<InicioPage> {
                 MaterialPageRoute(
                   builder: (context) {
                     //Aca debe return menu
-                    return ProdPage(); //MenuMobile();
+                    return LoginView(); //MenuMobile();
                   },
                 ),
               );
