@@ -9,6 +9,7 @@ Container producto(String nom_producto, String imagen, double precio,
   //vendedor jmario
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 20),
+    padding: EdgeInsets.symmetric(horizontal: 10),
     decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
@@ -56,35 +57,11 @@ Container producto(String nom_producto, String imagen, double precio,
                       estrellas.toString(),
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 25,
+                        fontSize: 20,
                       ),
                     ),
                   ],
                 ),
-                //Estrellas(),
-                /*Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            const Spacer(flex: 2),
-            Icon(
-              Icons.star,
-              color: CustomColors.SoviAmarillo,
-            ),
-            Text(
-              estrellas.toString(),
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-              ),
-            ),
-            const Spacer(flex: 2),
-          ],
-        ),*/
-                //SizedBox(
-                //    height:
-                //        20),
-
                 SizedBox(height: 10),
                 UniversalButton(
                     function,

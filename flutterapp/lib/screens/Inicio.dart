@@ -58,7 +58,7 @@ class _InicioPageState extends State<InicioPage> {
                 MaterialPageRoute(
                   builder: (context) {
                     //Aca debe return menu
-                    return LoginView(); //MenuMobile();
+                    return ProdPage(); //MenuMobile();
                   },
                 ),
               );
