@@ -40,7 +40,7 @@ class Home extends StatelessWidget {
             Carrusel_list()
           ],
         ),
-      ),
+      );
   }
 
 }

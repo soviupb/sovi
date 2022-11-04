@@ -1,15 +1,32 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-final CollectionReference _mainCollection = _firestore.collection('notes');
+final CollectionReference _mainCollection = _firestore.collection('users');
 
 class Database {
   static String? userUid;
 
-  static Future<void> addItem(
+
+  static Future<void> addUser(
+    {required String name, required String email, required String uid})
+    async {
+      DocumentReference referencer = _mainCollection.doc(uid);
+
+       Map<String, dynamic> data = <String, dynamic>{
+      "name": name,
+      "email": email,
+      };
+      await referencer
+        .set(data)
+        .whenComplete(() => print("Name item added to the database"))
+        .catchError((e) => print(e));
+    }
+
+/*   static Future<void> addItem(s
       {required String title, required String note}) async {
     DocumentReference documentReferencer =
-        _mainCollection.doc(userUid).collection('items').doc();
+        _mainCollection.doc();
+
 
     Map<String, dynamic> data = <String, dynamic>{
       "title": title,
@@ -21,7 +38,7 @@ class Database {
         .whenComplete(() => print("Note item added to the database"))
         .catchError((e) => print(e));
   }
-
+ */
   static Future<void> updateItem(
       {required String title,
       required String note,

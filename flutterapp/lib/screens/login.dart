@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutterapp/screens/seller.dart';
+import 'package:flutterapp/utils/auth.dart';
 import 'package:flutterapp/utils/custom_colors.dart';
+import 'package:flutterapp/utils/database.dart';
 import 'package:flutterapp/widgets/Producto.dart';
 import 'package:flutterapp/widgets/SeachBarWidget.dart';
 import 'package:flutterapp/widgets/UniversalButtonNoIcon.dart';
@@ -13,7 +15,10 @@ import '../widgets/UniversalButton.dart';
 import 'Inicio.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+   LoginPage({Key? key}) : super(key: key);
+
+  final TextEditingController _controllerEmail = TextEditingController();
+  final TextEditingController _controllerPass = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +78,7 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.8,
               child: TextField(
+                controller: _controllerEmail,
                 decoration: InputDecoration(
                   hintText: "Correo",
                 ),
@@ -82,6 +88,7 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.8,
               child: TextField(
+                controller: _controllerPass,
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: "Contraseña",
@@ -91,7 +98,7 @@ class LoginPage extends StatelessWidget {
             Spacer(),
             UniversalButtonNoIcon(() {
               //Aqui irá nuestra función de Sign In
-              Navigator.push(
+              /* Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
@@ -99,7 +106,8 @@ class LoginPage extends StatelessWidget {
                     return SellerPage(); //MenuMobile();
                   },
                 ),
-              );
+              ); */
+              CustomAuth.register(email:_controllerEmail.text,pass:_controllerPass.text);
             },
                 CustomColors.SoviMagenta,
                 "Iniciar sesión",
