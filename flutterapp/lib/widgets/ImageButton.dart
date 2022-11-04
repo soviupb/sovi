@@ -27,7 +27,7 @@ GestureDetector ImageButton(
             BoxShadow(
               blurRadius: 5.0,
               offset: Offset(0, 5),
-              color: shadowColor,
+              color: CustomColors.SoviGris,
             )
           ]),
       child: Center(
