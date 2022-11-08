@@ -143,13 +143,16 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            Text(
-              "Crear Cuenta",
-              style: TextStyle(
-                  color: CustomColors.SoviAzulMarino,
-                  fontSize: 20,
-                  fontStyle: FontStyle.italic),
-            ),
+            UniversalButtonNoIcon((){
+              Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return SignupPage();
+                      },
+                    ),
+                  );
+            }, Colors.transparent, "Crear cuenta", CustomColors.SoviAzulMarino, 20, Colors.transparent, 40, 120),
             SizedBox(
               height: 30,
             ),

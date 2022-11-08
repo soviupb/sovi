@@ -35,7 +35,7 @@ class SignupPage extends StatelessWidget {
           children: [
             Row(
               children: [
-                SizedBox(width: 10,),
+                SizedBox(width: 10, height: 100,),
                 UniversalButton(() {
                   Navigator.push(
                     context,
@@ -59,14 +59,8 @@ class SignupPage extends StatelessWidget {
             Spacer(
               flex: 1,
             ),
-            SizedBox(
-              height: 5,
-            ),
             Row(
               children: [
-                SizedBox(
-                  width: 30,
-                ),
                 SizedBox(
                   width: 50,
                 ),
