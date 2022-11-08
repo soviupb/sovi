@@ -8,6 +8,7 @@ import 'package:flutterapp/widgets/Producto.dart';
 import 'package:flutterapp/widgets/SeachBarWidget.dart';
 import 'package:flutterapp/widgets/UniversalButtonNoIcon.dart';
 import 'package:flutterapp/widgets/Widgets.dart';
+import 'package:flutterapp/widgets/producto_vendedor.dart';
 
 import '../widgets/UniversalButton.dart';
 import 'Inicio.dart';
@@ -29,7 +30,7 @@ class SellerPage extends StatelessWidget {
       child: Column(children: [
         Row(
               children: [
-                SizedBox(width: 10,),
+                SizedBox(width: 10, height: 100,),
                 UniversalButton(() {
                   Navigator.push(
                     context,
@@ -93,26 +94,26 @@ class SellerPage extends StatelessWidget {
           ],
         ),
         SizedBox(height: 30,),
-        SingleChildScrollView(
-          child: Container(
-            height: 600,
+        Container(
+          width: 400,
+          height: 400,
+          child: SingleChildScrollView(
             child: Column(children: [
-              producto("Papas", "assets/papas.jpg", 10000, 3.5, () {
-                //Aqui irá nuestra función de Sign In
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      //Aca debe return menu
-                      return InicioPage(); //MenuMobile();
-                    },
-                  ),
-                );
-              }, MediaQuery.of(context).size.height,
-                  MediaQuery.of(context).size.width),
-            ]),
-          ),
+              SizedBox(height: 30,),
+              producto_vendedor("Café", "assets/cafe.jpg", 20000, 3, (){}, MediaQuery.of(context).size.height,
+               MediaQuery.of(context).size.width),
+               SizedBox(height: 10,),
+               producto_vendedor("Café", "assets/cafe.jpg", 20000, 3, (){}, MediaQuery.of(context).size.height,
+               MediaQuery.of(context).size.width),
+               SizedBox(height: 10,),
+               producto_vendedor("Café", "assets/cafe.jpg", 20000, 3, (){}, MediaQuery.of(context).size.height,
+               MediaQuery.of(context).size.width),
+               SizedBox(height: 10,),
+               producto_vendedor("Café", "assets/cafe.jpg", 20000, 3, (){}, MediaQuery.of(context).size.height,
+               MediaQuery.of(context).size.width),
+            ]),) 
         )
+        
       ]),
     )));
   }

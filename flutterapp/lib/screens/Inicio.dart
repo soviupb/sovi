@@ -8,6 +8,7 @@ import 'package:flutterapp/utils/custom_colors.dart';
 import 'package:flutterapp/widgets/Producto.dart';
 import 'package:flutterapp/widgets/SeachBarWidget.dart';
 import 'package:flutterapp/widgets/Widgets.dart';
+import 'package:flutterapp/widgets/producto_vendedor.dart';
 
 import '../widgets/UniversalButton.dart';
 import 'login.dart';
@@ -50,6 +51,7 @@ class _InicioPageState extends State<InicioPage> {
             ),
             SubtitleText("No esperes más, dale gusto a tu panzita"),
             const Spacer(flex: 10),
+            
             //subTitleText("Ingresa tu usuario"),
             SizedBox(height: 10),
             UniversalButton(() {

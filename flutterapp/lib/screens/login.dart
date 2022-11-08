@@ -36,7 +36,7 @@ class LoginPage extends StatelessWidget {
           children: [
             Row(
               children: [
-                SizedBox(width: 10,),
+                SizedBox(width: 10, height: 100,),
                 UniversalButton(() {
                   Navigator.push(
                     context,
@@ -102,10 +102,11 @@ class LoginPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return SignupPage();
+                        return const SellerPage();
                       },
                     ),
                   );
+              //CustomAuth.signInWithEmailAndPassword(email:_controllerEmail.text,pass:_controllerPass.text);
             },
                 CustomColors.SoviMagenta,
                 "Iniciar sesión",

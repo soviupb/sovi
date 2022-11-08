@@ -29,15 +29,13 @@ class CustomAuth {
     } */
   }
 
-  static void signInWithEmailAndPassword(String email, String pass) async {
-   
-
-    try {
+  static void signInWithEmailAndPassword({required String email,required String pass}) async {  try {
       user = (await _auth.signInWithEmailAndPassword(
         email: email,
         password: pass,
       ))
           .user;
+          print("Bienvenido");
     } catch (error) {
       print(error);
       user = null;
