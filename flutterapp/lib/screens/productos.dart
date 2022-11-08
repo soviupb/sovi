@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/screens/BuquedaSeller.dart';
 import 'package:flutterapp/screens/Inicio.dart';
+import 'package:flutterapp/screens/home.dart';
 import 'package:flutterapp/screens/productos.dart';
 import 'package:flutterapp/utils/custom_colors.dart';
 import 'package:flutterapp/widgets/Producto.dart';
@@ -159,37 +160,30 @@ class _ProdPageState extends State<ProdPage> {
                 label: '',
               ),
             ],
-            currentIndex: _selectedIndex,
+            currentIndex: 0,
             selectedItemColor: Colors.white,
             onTap: (int index) {
               switch (index) {
                 case 0:
                   // only scroll to top when current index is selected.
                   //Nada pues estamos en el case 0
-                  break;
-                case 1:
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
                         //Aca debe return menu
-                        return BusquedaSellerPage(); //MenuMobile();
+                        return HomePage(); //MenuMobile();
                       },
                     ),
                   );
+                  break;
+                case 1:
+                  
                   //BusquedaSellerPage
                   //showModal(context);
                   break;
                 case 2:
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        //Aca debe return menu
-                        return BusquedaSellerPage(); //MenuMobile();
-                      },
-                    ),
-                  );
+                
                   //BusquedaSellerPage
                   //showModal(context);
                   break;

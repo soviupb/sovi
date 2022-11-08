@@ -9,7 +9,7 @@ class reviewlist extends StatelessWidget {
       children: [
         new Review('assets/jose.jpg', 'Jose Miguel',
             'Muy buena aplicacion dentro de la U'),
-        new Review('assets/Valeria.jpg', 'camila Padilla',
+        new Review('assets/valeria.jpg', 'camila Padilla',
             'Deberian expandir sus servicios :)')
       ],
     );

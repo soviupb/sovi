@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutterapp/screens/seller.dart';
-import 'package:flutterapp/screens/signup.dart';
 import 'package:flutterapp/utils/auth.dart';
 import 'package:flutterapp/utils/custom_colors.dart';
 import 'package:flutterapp/utils/database.dart';
@@ -15,8 +14,8 @@ import 'package:flutterapp/widgets/Widgets.dart';
 import '../widgets/UniversalButton.dart';
 import 'Inicio.dart';
 
-class LoginPage extends StatelessWidget {
-   LoginPage({Key? key}) : super(key: key);
+class SignupPage extends StatelessWidget {
+   SignupPage({Key? key}) : super(key: key);
 
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPass = TextEditingController();
@@ -54,7 +53,7 @@ class LoginPage extends StatelessWidget {
               flex: 2,
             ),
             Text(
-              "Iniciar Sesión",
+              "Registrase",
               style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
             ),
             Spacer(
@@ -98,17 +97,10 @@ class LoginPage extends StatelessWidget {
             ),
             Spacer(),
             UniversalButtonNoIcon(() {
-              Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return SignupPage();
-                      },
-                    ),
-                  );
+              CustomAuth.register(email:_controllerEmail.text,pass:_controllerPass.text);
             },
                 CustomColors.SoviMagenta,
-                "Iniciar sesión",
+                "Registrase",
                 Colors.white,
                 15,
                 CustomColors.SoviGris,
@@ -143,19 +135,9 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            Text(
-              "Crear Cuenta",
-              style: TextStyle(
-                  color: CustomColors.SoviAzulMarino,
-                  fontSize: 20,
-                  fontStyle: FontStyle.italic),
-            ),
             SizedBox(
               height: 30,
             ),
-            Text("¿Olvidaste tu contraseña?",
-                style: TextStyle(
-                    color: CustomColors.SoviAzulMarino, fontSize: 20)),
             Spacer(flex: 2),
           ],
         ),
