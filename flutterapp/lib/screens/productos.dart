@@ -75,7 +75,7 @@ class _ProdPageState extends State<ProdPage> {
                     MaterialPageRoute(
                       builder: (context) {
                         //Aca debe return menu
-                        return ProdPage(); //MenuMobile();
+                        return InicioPage(); //MenuMobile();
                       },
                     ),
                   );
@@ -178,12 +178,12 @@ class _ProdPageState extends State<ProdPage> {
                   );
                   break;
                 case 1:
-                  
+
                   //BusquedaSellerPage
                   //showModal(context);
                   break;
                 case 2:
-                
+
                   //BusquedaSellerPage
                   //showModal(context);
                   break;
