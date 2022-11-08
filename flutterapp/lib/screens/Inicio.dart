@@ -4,6 +4,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutterapp/screens/home.dart';
 import 'package:flutterapp/screens/login2FIre.dart';
+import 'package:flutterapp/screens/categorias.dart';
 import 'package:flutterapp/utils/custom_colors.dart';
 import 'package:flutterapp/widgets/Producto.dart';
 import 'package:flutterapp/widgets/SeachBarWidget.dart';
@@ -59,7 +60,7 @@ class _InicioPageState extends State<InicioPage> {
                 MaterialPageRoute(
                   builder: (context) {
                     //Aca debe return menu
-                    return HomePage(); //MenuMobile();
+                    return CatPage(); //MenuMobile();
                   },
                 ),
               );
