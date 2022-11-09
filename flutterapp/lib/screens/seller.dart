@@ -28,7 +28,15 @@ class SellerPage extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(children: [
-        Row(
+        Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage("assets/paisaje.jpg"), fit: BoxFit.cover),
+            borderRadius: BorderRadius.circular(15),
+          ),
+          height: 250,
+          width: 400,
+          child: Column(children: [
+            Row(
               children: [
                 SizedBox(width: 10, height: 100,),
                 UniversalButton(() {
@@ -54,7 +62,18 @@ class SellerPage extends StatelessWidget {
             ),
             Text(
               "@Sancho Panza",
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold,shadows: <Shadow>[
+                  Shadow(
+                    //offset: Offset(0, 10.0),
+                    blurRadius: 50.0,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  Shadow(
+                    //offset: Offset(10.0, 10.0),
+                    blurRadius: 50.0,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ),
+                ],),
             ),
             Spacer(
               flex: 1,
@@ -92,6 +111,8 @@ class SellerPage extends StatelessWidget {
               flex: 1,
             )
           ],
+        ),
+          ],),
         ),
         SizedBox(height: 30,),
         Container(
