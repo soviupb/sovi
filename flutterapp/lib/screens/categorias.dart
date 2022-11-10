@@ -22,6 +22,7 @@ class CatPage extends StatefulWidget {
 }
 
 class _InicioPageState extends State<CatPage> {
+  int _selectedIndex = 0;
   bool x = false;
   bool y = false;
   double screenheight = 0.0;
@@ -54,7 +55,7 @@ class _InicioPageState extends State<CatPage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return const InicioPage();
+                        return InicioPage();
                       },
                     ),
                   );
@@ -138,6 +139,79 @@ class _InicioPageState extends State<CatPage> {
           ]),
         ),
       )),
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          // sets the background color of the `BottomNavigationBar`
+          canvasColor: CustomColors.SoviMagenta,
+        ),
+        child: BottomNavigationBar(
+          // fixedColor: CustomColors.SoviMagenta,
+          items: <BottomNavigationBarItem>[
+            //quite el const de aca para poder usar
+            //  screenheightt, pues este no es constante
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home, size: screenheight * 0.07),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search, size: screenheight * 0.07),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.menu, size: screenheight * 0.07),
+              label: '',
+            ),
+          ],
+          currentIndex: 2,
+          selectedItemColor: Colors.white,
+          onTap: (int index) {
+            switch (index) {
+              case 0:
+                // only scroll to top when current index is selected.
+                //Nada pues estamos en el case 0
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      //Aca debe return menu
+                      return HomePage(); //MenuMobile();
+                    },
+                  ),
+                );
+                break;
+              case 1:
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      //Aca debe return menu
+                      return ProdPage(); //MenuMobile();
+                    },
+                  ),
+                );
+
+                break;
+              case 2:
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      //Aca debe return menu
+                      return CatPage(); //MenuMobile();
+                    },
+                  ),
+                );
+
+                break;
+            }
+            setState(
+              () {
+                _selectedIndex = index;
+              },
+            );
+          },
+        ),
+      ),
     );
   }
 }

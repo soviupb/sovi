@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/screens/BuquedaSeller.dart';
 import 'package:flutterapp/screens/Inicio.dart';
+import 'package:flutterapp/screens/categorias.dart';
 import 'package:flutterapp/screens/home.dart';
 import 'package:flutterapp/screens/productos.dart';
 import 'package:flutterapp/utils/custom_colors.dart';
@@ -160,7 +161,7 @@ class _ProdPageState extends State<ProdPage> {
                 label: '',
               ),
             ],
-            currentIndex: 0,
+            currentIndex: 1,
             selectedItemColor: Colors.white,
             onTap: (int index) {
               switch (index) {
@@ -183,14 +184,21 @@ class _ProdPageState extends State<ProdPage> {
                   //showModal(context);
                   break;
                 case 2:
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        //Aca debe return menu
+                        return CatPage(); //MenuMobile();
+                      },
+                    ),
+                  );
 
-                  //BusquedaSellerPage
-                  //showModal(context);
                   break;
               }
               setState(
                 () {
-                  _selectedIndex = index;
+                  _selectedIndex = 1;
                 },
               );
             },

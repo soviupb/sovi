@@ -52,7 +52,7 @@ class _InicioPageState extends State<InicioPage> {
             ),
             SubtitleText("No esperes más, dale gusto a tu panzita"),
             const Spacer(flex: 10),
-            
+
             //subTitleText("Ingresa tu usuario"),
             SizedBox(height: 10),
             UniversalButton(() {
@@ -62,7 +62,7 @@ class _InicioPageState extends State<InicioPage> {
                 MaterialPageRoute(
                   builder: (context) {
                     //Aca debe return menu
-                    return CatPage(); //MenuMobile();
+                    return HomePage(); //MenuMobile();
                   },
                 ),
               );
