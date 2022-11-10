@@ -102,7 +102,7 @@ class LoginPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return const SellerPage();
+                        return SellerPage("Usuario");
                       },
                     ),
                   );

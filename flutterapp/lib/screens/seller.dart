@@ -14,7 +14,10 @@ import '../widgets/UniversalButton.dart';
 import 'Inicio.dart';
 
 class SellerPage extends StatelessWidget {
-  const SellerPage({Key? key}) : super(key: key);
+  
+  final String vendedor;
+
+  SellerPage(this.vendedor);
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +51,14 @@ class SellerPage extends StatelessWidget {
                       },
                     ),
                   );
-                }, Colors.white, "", Colors.white, 50, Colors.white,
-                    Icon(Icons.arrow_back, size: 40,), 50, 50),
+                }, Colors.transparent, "", Colors.white, 50, Colors.transparent,
+                    Icon(Icons.arrow_back, size: 40, color: Colors.white, shadows: [
+                  Shadow(
+                    //offset: Offset(10.0, 10.0),
+                    blurRadius: 50.0,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ),
+              ],), 50, 50),
               ],
             ),
         Spacer(
@@ -61,26 +70,27 @@ class SellerPage extends StatelessWidget {
               flex: 1,
             ),
             Text(
-              "@Sancho Panza",
+              vendedor,
               style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold,shadows: <Shadow>[
                   Shadow(
                     //offset: Offset(0, 10.0),
                     blurRadius: 50.0,
                     color: Color.fromARGB(255, 0, 0, 0),
                   ),
+                ],),
+            ),
+            SizedBox(width: 10,),
+            Icon(
+              Icons.account_circle,
+              size: 70,
+              color: Colors.white,
+              shadows: [
                   Shadow(
                     //offset: Offset(10.0, 10.0),
                     blurRadius: 50.0,
                     color: Color.fromARGB(255, 0, 0, 0),
                   ),
-                ],),
-            ),
-            Spacer(
-              flex: 1,
-            ),
-            Icon(
-              Icons.account_circle,
-              size: 50,
+              ],
             ),
             Spacer(
               flex: 1,
@@ -88,7 +98,7 @@ class SellerPage extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 30,
+          height: 10,
         ),
         Row(
           children: [
@@ -109,9 +119,10 @@ class SellerPage extends StatelessWidget {
             ),
             Spacer(
               flex: 1,
-            )
+            ),
           ],
         ),
+        Spacer(flex: 10,)
           ],),
         ),
         SizedBox(height: 30,),
@@ -121,16 +132,16 @@ class SellerPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(children: [
               SizedBox(height: 30,),
-              producto_vendedor("Café", "assets/cafe.jpg", 20000, 3, (){}, MediaQuery.of(context).size.height,
+              producto_vendedor("Café", "assets/cafe.jpg", 2000, 4, (){}, MediaQuery.of(context).size.height,
                MediaQuery.of(context).size.width),
                SizedBox(height: 10,),
-               producto_vendedor("Café", "assets/cafe.jpg", 20000, 3, (){}, MediaQuery.of(context).size.height,
+               producto_vendedor("Papitas", "assets/papitas.jpg", 3000, 3, (){}, MediaQuery.of(context).size.height,
                MediaQuery.of(context).size.width),
                SizedBox(height: 10,),
-               producto_vendedor("Café", "assets/cafe.jpg", 20000, 3, (){}, MediaQuery.of(context).size.height,
+               producto_vendedor("Dulces", "assets/dulces_copy.jpg", 1000, 4.5, (){}, MediaQuery.of(context).size.height,
                MediaQuery.of(context).size.width),
                SizedBox(height: 10,),
-               producto_vendedor("Café", "assets/cafe.jpg", 20000, 3, (){}, MediaQuery.of(context).size.height,
+               producto_vendedor("Barquillos", "assets/barquillos.jpg", 2500, 5, (){}, MediaQuery.of(context).size.height,
                MediaQuery.of(context).size.width),
             ]),) 
         )

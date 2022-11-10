@@ -73,4 +73,15 @@ class Database {
         .whenComplete(() => print('Note item deleted from the database'))
         .catchError((e) => print(e));
   }
+/* 
+    static String<void> getItem({required String docId}) async {
+    DocumentReference documentReferencer =
+        _mainCollection.doc(userUid).collection('items').doc(docId);
+  String x = '';
+    await documentReferencer
+        .delete()
+        .whenComplete(() => print('Note item deleted from the database'))
+        .catchError((e) => print(e));
+        return x;
+  } */
 }

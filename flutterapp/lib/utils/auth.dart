@@ -9,13 +9,13 @@ class CustomAuth {
   static  final FirebaseAuth _auth= FirebaseAuth.instance;
 
 
-  static void register({required String email,required String pass}) async {
+  static void register({required String email,required String pass, required String name}) async {
     final User? user = (await _auth.createUserWithEmailAndPassword(
       email: email,
       password: pass,
     )).user;
     if(user!=null){
-      Database.addUser(name: email, email: email, uid: user.uid);
+      Database.addUser(name: name, email: email, uid: user.uid);
     }
     /* if (user != null) {
       setState(() {
