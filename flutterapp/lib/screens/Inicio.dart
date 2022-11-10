@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterapp/screens/WellcomePage.dart';
 import 'package:flutterapp/screens/home.dart';
 import 'package:flutterapp/screens/login2FIre.dart';
 import 'package:flutterapp/screens/categorias.dart';
@@ -62,7 +63,7 @@ class _InicioPageState extends State<InicioPage> {
                 MaterialPageRoute(
                   builder: (context) {
                     //Aca debe return menu
-                    return HomePage(); //MenuMobile();
+                    return WelcomePage(); //MenuMobile();
                   },
                 ),
               );
