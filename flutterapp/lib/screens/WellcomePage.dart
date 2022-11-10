@@ -53,9 +53,9 @@ class _WelcomePageState extends State<WelcomePage> {
         physics: NeverScrollableScrollPhysics(),
       ),
       bottomNavigationBar: Container(
-        padding: const EdgeInsets.fromLTRB(25, 0, 25, 25),
+        padding: const EdgeInsets.fromLTRB(25, 0, 25, 10),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
+          borderRadius: BorderRadius.zero,
           color: CustomColors.SoviMagenta,
           //border: Border.all(color: Colors.green), //quitar es solo para visulizar como queda
         ),
