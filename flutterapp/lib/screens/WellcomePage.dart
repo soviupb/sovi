@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/screens/BuquedaSeller.dart';
+import 'package:flutterapp/screens/categorias.dart';
 import 'dart:math' as math;
 
 import 'package:flutterapp/screens/home.dart';
@@ -44,8 +45,8 @@ class _WelcomePageState extends State<WelcomePage> {
       body: PageView(
         children: <Widget>[
           HomePage(),
-          BusquedaSellerPage(),
           ProdPage(),
+          CatPage(),
         ],
         controller: pageController,
         onPageChanged: onPageChanged,
@@ -86,7 +87,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   onTap(2);
                 },
                 icon: Icon(
-                  Icons.send,
+                  Icons.menu,
                   color: _page == 2 ? Colors.white : Colors.grey,
                   size: size.width * 0.10,
                 )),
