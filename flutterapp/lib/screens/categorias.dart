@@ -43,47 +43,41 @@ class _InicioPageState extends State<CatPage> {
         ),
         child: SingleChildScrollView(
           child: Column(children: [
-            /*categoria("Barquillos", "assets/barquillos.jpg", () {
-            //Aqui irá nuestra función de Sign In
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  //Aca debe return menu
-                  return InicioPage(); //MenuMobile();
-                },
-              ),
-            );
-          }, screenheight, screenWIdth),*/
-
-            UniversalButton(() {
-              //Aqui irá nuestra función de Sign In
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    //Aca debe return menu
-                    return InicioPage(); //MenuMobile();
-                  },
+            Row(
+              children: [
+                SizedBox(
+                  width: 10,
+                  height: 85,
                 ),
-              );
-            },
-                Colors.white,
-                "Cliente",
-                Colors.black,
-                20,
-                CustomColors.SoviMagenta,
-                Icon(Icons.person, size: screenheight * 0.07),
-                screenheight * 0.08,
-                screenWIdth * 0.8),
+                UniversalButton(() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const InicioPage();
+                      },
+                    ),
+                  );
+                },
+                    Colors.white,
+                    "",
+                    Colors.white,
+                    50,
+                    Colors.white,
+                    Icon(
+                      Icons.arrow_back,
+                      size: 40,
+                    ),
+                    10,
+                    50),
+              ],
+            ),
             categoria("Barquillos", "assets/barquillos.jpg", () {
-              //Aqui irá nuestra función de Sign In
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    //Aca debe return menu
-                    return InicioPage(); //MenuMobile();
+                    return InicioPage();
                   },
                 ),
               );
@@ -116,6 +110,19 @@ class _InicioPageState extends State<CatPage> {
             }, 10, 10),
             SizedBox(height: 20),
             categoria("Café", "assets/cafe.jpg", () {
+              //Aqui irá nuestra función de Sign In
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    //Aca debe return menu
+                    return InicioPage(); //MenuMobile();
+                  },
+                ),
+              );
+            }, 10, 10),
+            SizedBox(height: 20),
+            categoria("Dulces", "assets/dulces.jpg", () {
               //Aqui irá nuestra función de Sign In
               Navigator.push(
                 context,
