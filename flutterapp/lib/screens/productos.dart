@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/screens/BuquedaSeller.dart';
 import 'package:flutterapp/screens/Inicio.dart';
-import 'package:flutterapp/screens/ProductsofXtype/Barquillos.dart';
+import 'package:flutterapp/screens/ProductsofXtype/Dulces.dart';
 import 'package:flutterapp/screens/categorias.dart';
 import 'package:flutterapp/screens/home.dart';
 import 'package:flutterapp/screens/productos.dart';
