@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterapp/screens/WellcomePage.dart';
 import 'package:flutterapp/screens/categorias.dart';
 import 'package:flutterapp/screens/home.dart';
 import 'package:flutterapp/screens/login2FIre.dart';
@@ -55,7 +56,7 @@ class _InicioPageState extends State<FriePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return CatPage();
+                        return WelcomePage();
                       },
                     ),
                   );
@@ -99,13 +100,19 @@ class _GridBState extends State<GridB> {
       "title": "Papas chepe",
       "price": "\$3500",
       "images":
-          "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Fries-Small-Medium.jpg",
+          "https://images.unsplash.com/photo-1619881589316-56c7f9e6b587?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
     },
     {
       "title": "Papas Capira",
       "price": "\$3500",
       "images":
           "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    },
+    {
+      "title": "Papas Organicas pepe",
+      "price": "\$3500",
+      "images":
+          "https://images.unsplash.com/photo-1621447504864-d8686e12698c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=769&q=80",
     }
   ];
 

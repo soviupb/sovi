@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterapp/screens/WellcomePage.dart';
 import 'package:flutterapp/screens/categorias.dart';
 import 'package:flutterapp/screens/home.dart';
 import 'package:flutterapp/screens/login2FIre.dart';
@@ -55,7 +56,7 @@ class _InicioPageState extends State<BarquilloPage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return CatPage();
+                        return WelcomePage();
                       },
                     ),
                   );
@@ -96,10 +97,10 @@ class _GridBState extends State<GridB> {
     //cabe aclarar que no tenemos licensias de las imagenes mostradas
     //tambien se deberia añadir la imagen de perfil del vendedor
     {
-      "title": "Papas chepe",
+      "title": "Barquillos Valeria",
       "price": "\$3500",
       "images":
-          "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Barquillos-Small-Medium.jpg",
+          "https://images.unsplash.com/photo-1662484844144-92710767c951?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     },
     {
       "title": "Papas Capira",
