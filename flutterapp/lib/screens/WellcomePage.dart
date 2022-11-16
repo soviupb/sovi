@@ -68,15 +68,6 @@ class _WelcomePageState extends State<WelcomePage> {
         onPageChanged: onPageChanged,
         physics: NeverScrollableScrollPhysics(),
       ),
-      floatingActionButtonLocation: showBtmAppBr
-          ? FloatingActionButtonLocation.centerDocked
-          : FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(
-          Icons.add,
-        ),
-      ),
       bottomNavigationBar: AnimatedContainer(
         padding: const EdgeInsets.fromLTRB(25, 0, 25, 10),
         decoration: BoxDecoration(
