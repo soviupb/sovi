@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterapp/screens/ProductsofXtype/Barquillos.dart';
 import 'package:flutterapp/screens/ProductsofXtype/Dulces.dart';
 import 'package:flutterapp/screens/ProductsofXtype/Fries.dart';
 import 'package:flutterapp/screens/home.dart';
@@ -80,7 +81,7 @@ class _InicioPageState extends State<CatPage> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return InicioPage();
+                    return BarquilloPage();
                   },
                 ),
               );

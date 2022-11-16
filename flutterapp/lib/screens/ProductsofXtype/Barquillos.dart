@@ -13,14 +13,14 @@ import 'package:flutterapp/widgets/UniversalButton.dart';
 import 'package:flutterapp/widgets/categoria.dart';
 import 'package:flutterapp/widgets/Widgets.dart';
 
-class FriePage extends StatefulWidget {
-  const FriePage({Key? key}) : super(key: key);
+class BarquilloPage extends StatefulWidget {
+  const BarquilloPage({Key? key}) : super(key: key);
 
   @override
-  State<FriePage> createState() => _InicioPageState();
+  State<BarquilloPage> createState() => _InicioPageState();
 }
 
-class _InicioPageState extends State<FriePage> {
+class _InicioPageState extends State<BarquilloPage> {
   int _selectedIndex = 0;
   bool x = false;
   bool y = false;
@@ -99,7 +99,7 @@ class _GridBState extends State<GridB> {
       "title": "Papas chepe",
       "price": "\$3500",
       "images":
-          "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Fries-Small-Medium.jpg",
+          "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Barquillos-Small-Medium.jpg",
     },
     {
       "title": "Papas Capira",
