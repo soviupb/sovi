@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutterapp/screens/BuquedaSeller.dart';
 import 'package:flutterapp/screens/categorias.dart';
 import 'dart:math' as math;
@@ -20,9 +21,23 @@ class _WelcomePageState extends State<WelcomePage> {
   PageController pageController = PageController();
   //GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
+  //For Hide Btmappbar
+  ScrollController _scrollController = ScrollController();
+
   @override
   void initState() {
     super.initState();
+    _scrollController.addListener(() {
+      if (_scrollController.position.userScrollDirection ==
+          ScrollDirection.reverse) {
+        showBtmAppBr = false;
+        setState(() {});
+      } else {
+        showBtmAppBr = true;
+        setState(() {});
+      }
+    });
+
     pageController = PageController();
   }
 
@@ -33,6 +48,7 @@ class _WelcomePageState extends State<WelcomePage> {
     });
   }
 
+  bool showBtmAppBr = true;
   onTap(_page) {
     pageController.jumpToPage(
       _page,
@@ -52,7 +68,16 @@ class _WelcomePageState extends State<WelcomePage> {
         onPageChanged: onPageChanged,
         physics: NeverScrollableScrollPhysics(),
       ),
-      bottomNavigationBar: Container(
+      floatingActionButtonLocation: showBtmAppBr
+          ? FloatingActionButtonLocation.centerDocked
+          : FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(
+          Icons.add,
+        ),
+      ),
+      bottomNavigationBar: AnimatedContainer(
         padding: const EdgeInsets.fromLTRB(25, 0, 25, 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.zero,
@@ -94,6 +119,11 @@ class _WelcomePageState extends State<WelcomePage> {
             Spacer(),
           ],
         ),
+        duration: const Duration(
+          milliseconds: 800,
+        ),
+        curve: Curves.easeInOutSine,
+        height: showBtmAppBr ? 70 : 0,
       ),
     );
   }
